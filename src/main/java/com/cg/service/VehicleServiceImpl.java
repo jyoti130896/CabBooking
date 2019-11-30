@@ -67,7 +67,7 @@ public class VehicleServiceImpl implements VehicleService {
 	}
 
 	@Override
-	public List<Vehicle> fetchVehicleBySeatingCapacity(String seatingCapacity) throws VehicleDetailsNotFoundException {
+	public List<Vehicle> fetchVehicleBySeatingCapacity(int seatingCapacity) throws VehicleDetailsNotFoundException {
 		if(repo.fetchAllVehicleBySeatingCapacity(seatingCapacity).size()==0)
 			throw new VehicleDetailsNotFoundException("No Vehicle found for Seating Capaciy: " + seatingCapacity);
 		return repo.fetchAllVehicleBySeatingCapacity(seatingCapacity);

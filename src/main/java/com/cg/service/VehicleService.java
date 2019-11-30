@@ -21,7 +21,7 @@ Vehicle addVehicle(Vehicle vehicle);
 	
 	List<Vehicle> fetchVehicleByType(String type) throws VehicleDetailsNotFoundException;
 	
-	List<Vehicle> fetchVehicleBySeatingCapacity(String seatingCapacity) throws VehicleDetailsNotFoundException;
+	List<Vehicle> fetchVehicleBySeatingCapacity(int seatingCapacity) throws VehicleDetailsNotFoundException;
 	
 	Route addRoute(Route route);
 	

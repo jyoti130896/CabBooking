@@ -13,5 +13,5 @@ public interface VehicleRepo extends JpaRepository<Vehicle, Integer> {
 	@Query("SELECT v FROM Vehicle v WHERE v.vehicleType=:type")
 	List<Vehicle> fetchAllVehicleByType(String type);
 	@Query("SELECT v FROM Vehicle v WHERE v.seatingCapacity=:capacity")
-	List<Vehicle> fetchAllVehicleBySeatingCapacity(String capacity);
+	List<Vehicle> fetchAllVehicleBySeatingCapacity(int capacity);
 }

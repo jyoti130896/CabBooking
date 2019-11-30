@@ -9,6 +9,6 @@ public interface BookingService {
 	int doBooking(Booking booking);
 	 Booking fetchBookingById(int bookingId);
 	 List<Booking> fetchAllBooking();
-	 List<Booking> fetchOrderByUserId(int id);
+	 List<Booking> fetchBookingByUserId(int id);
 	List<BookingDetail> fetchUserDetailsByBookingId(int id);
 }

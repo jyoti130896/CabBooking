@@ -39,8 +39,8 @@ public class BookingServiceImpl implements BookingService{
 	}
 
 	@Override
-	public List<Booking> fetchOrderByUserId(int id) {
-		return repo.fetchOrderByUserId(id);
+	public List<Booking> fetchBookingByUserId(int id) {
+		return repo.fetchBookingByUserId(id);
 	}
 
 	@Override

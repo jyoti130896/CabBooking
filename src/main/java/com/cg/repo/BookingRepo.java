@@ -10,6 +10,6 @@ import com.cg.dto.Booking;
 
 public interface BookingRepo extends JpaRepository<Booking, Integer>{
 	@Query("SELECT b FROM Booking b where b.userId=:id")
-	List<Booking> fetchOrderByUserId(int id);
+	List<Booking> fetchBookingByUserId(int id);
 
 }

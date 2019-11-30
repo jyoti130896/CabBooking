@@ -39,12 +39,12 @@ public class Vehicle {
 	@Column(name = "Seating_Capacity", length = 20)
 	@NotEmpty(message = "Seating Capacity cannot be empty")
 	@Size(max = 20, message = "max size of seating capacity is 8")
-	private String seatingCapacity;
+	private int seatingCapacity;
 
 	@ManyToMany(mappedBy = "vehicles", fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, })
 	Set<Route> routes = new HashSet<Route>();
 
-	public Vehicle(String vehicleId, String vehicleType, String vehicleName, String vehicleFair, String seatingCapacity,
+	public Vehicle(String vehicleId, String vehicleType, String vehicleName, String vehicleFair, int seatingCapacity,
 			Set<Route> routes) {
 		super();
 		this.vehicleId = vehicleId;
@@ -87,11 +87,11 @@ public class Vehicle {
 		this.vehicleFair = vehicleFair;
 	}
 
-	public String getSeatingCapacity() {
+	public int getSeatingCapacity() {
 		return seatingCapacity;
 	}
 
-	public void setSeatingCapacity(String seatingCapacity) {
+	public void setSeatingCapacity(int seatingCapacity) {
 		this.seatingCapacity = seatingCapacity;
 	}
 
