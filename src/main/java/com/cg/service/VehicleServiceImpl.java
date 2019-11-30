@@ -2,13 +2,17 @@ package com.cg.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cg.Exception.VehicleDetailsNotFoundException;
 import com.cg.dto.Route;
 import com.cg.dto.Vehicle;
 import com.cg.repo.VehicleRepo;
-
+@Service
+@Transactional
 public class VehicleServiceImpl implements VehicleService {
 	@Autowired
 	private VehicleRepo repo;

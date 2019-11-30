@@ -2,13 +2,17 @@ package com.cg.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cg.dto.Booking;
 import com.cg.dto.BookingDetail;
 import com.cg.repo.BookingDetailRepo;
 import com.cg.repo.BookingRepo;
-
+@Service
+@Transactional
 public class BookingServiceImpl implements BookingService{
 	@Autowired
 	private BookingRepo repo;

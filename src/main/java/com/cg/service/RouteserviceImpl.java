@@ -2,12 +2,16 @@ package com.cg.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cg.Exception.RouteNotFoundException;
 import com.cg.dto.Route;
 import com.cg.repo.RouteRepo;
-
+@Service
+@Transactional
 public class RouteserviceImpl implements RouteService {
 	@Autowired
 	private RouteRepo repo;
