@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.cg.Exception.VehicleDetailsNotFoundException;
+import com.cg.dto.Route;
 import com.cg.dto.Vehicle;
 import com.cg.repo.VehicleRepo;
 
@@ -66,6 +67,11 @@ public class VehicleServiceImpl implements VehicleService {
 		if(repo.fetchAllVehicleBySeatingCapacity(seatingCapacity).size()==0)
 			throw new VehicleDetailsNotFoundException("No Vehicle found for Seating Capaciy: " + seatingCapacity);
 		return repo.fetchAllVehicleBySeatingCapacity(seatingCapacity);
+	}
+
+	@Override
+	public Route addRoute(Route route) {
+		return null;
 	}
 
 }

@@ -32,7 +32,7 @@ public class Route {
     private String destination;
     
     @Column(name="distance")
-    private String distance;
+    private double distance;
     
     @Column(name="duration")
     private double duration;
@@ -51,7 +51,7 @@ public class Route {
     
     
 
-	public Route(String routeId, String source, String destination, String distance, double duration,
+	public Route(String routeId, String source, String destination, double distance, double duration,
 			Set<Vehicle> vehicles) {
 		super();
 		this.routeId = routeId;
@@ -86,11 +86,11 @@ public class Route {
 		this.destination = destination;
 	}
 
-	public String getDistance() {
+	public double getDistance() {
 		return distance;
 	}
 
-	public void setDistance(String distance) {
+	public void setDistance(double distance) {
 		this.distance = distance;
 	}
 

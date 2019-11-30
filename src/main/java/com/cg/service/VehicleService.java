@@ -3,6 +3,7 @@ package com.cg.service;
 import java.util.List;
 
 import com.cg.Exception.VehicleDetailsNotFoundException;
+import com.cg.dto.Route;
 import com.cg.dto.Vehicle;
 
 public interface VehicleService {
@@ -21,5 +22,7 @@ Vehicle addVehicle(Vehicle vehicle);
 	List<Vehicle> fetchVehicleByType(String type) throws VehicleDetailsNotFoundException;
 	
 	List<Vehicle> fetchVehicleBySeatingCapacity(String seatingCapacity) throws VehicleDetailsNotFoundException;
+	
+	Route addRoute(Route route);
 	
 }
