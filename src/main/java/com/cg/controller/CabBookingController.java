@@ -17,7 +17,6 @@ import com.cg.Exception.UserNotSavedException;
 import com.cg.Exception.VehicleDetailsNotFoundException;
 import com.cg.Exception.WrongPasswordException;
 import com.cg.dto.Booking;
-import com.cg.dto.BookingDetail;
 import com.cg.dto.Route;
 import com.cg.dto.User;
 import com.cg.dto.Vehicle;
@@ -68,13 +67,18 @@ public class CabBookingController {
 	@Autowired
 	private RouteService rservice;
 	
+	@PostMapping(value = "route/addRoute", consumes = "application/json", produces = "application/json")
+	public Route addRoute(@RequestBody Route route) {
+		return rservice.addRoute(route);
+	}
+	
 	@GetMapping(value = "route/{id}", produces = "application/json")
 	public Route fetchRouteById(@PathVariable int id) throws RouteNotFoundException {
 		return rservice.fetchRouteById(id);
 	}
 	
 	@GetMapping(value = "route/{source}/{destination}", produces = "application/json")
-	public double fetchDistanceBySourceAndDestination(@PathVariable String source, String destination) throws RouteNotFoundException {
+	public Object fetchDistanceBySourceAndDestination(@PathVariable String source, String destination) throws RouteNotFoundException {
 		return rservice.fetchDistanceBySourceAndDestination(source, destination);
 	}
 	
@@ -88,8 +92,8 @@ public class CabBookingController {
 	@Autowired
 	private BookingService bservice;
 	
-	@PostMapping(value = "doBooking", consumes = "application/json", produces = "application/json")
-	public int doBooking(@RequestBody Booking booking) {
+	@PostMapping(value = "booking/doBooking", consumes = "application/json", produces = "application/json")
+	public Booking doBooking(@RequestBody Booking booking) {
 		return bservice.doBooking(booking);
 	}
 	
@@ -108,10 +112,10 @@ public class CabBookingController {
 		return bservice.fetchBookingByUserId(userId);
 	}
 	
-	@GetMapping(value = "userByBooking/{bookingId}", produces = "application/json")
-	public  List<BookingDetail> fetchUserDetailsByBookingId(@PathVariable int bookingId){
-		return bservice.fetchUserDetailsByBookingId(bookingId);
-	}
+//	@GetMapping(value = "userByBooking/{bookingId}", produces = "application/json")
+//	public  List<BookingDetail> fetchUserDetailsByBookingId(@PathVariable int bookingId){
+//		return bservice.fetchUserDetailsByBookingId(bookingId);
+//	}
 	
 	/*  *******************************************************************************************************************************  */
 
@@ -119,7 +123,7 @@ public class CabBookingController {
 	private UserService uservice;
 	
 	@PostMapping(value = "/user/add")
-	public User addEmployee(@RequestBody User user) throws UserNotSavedException {
+	public User addUser(@RequestBody User user) throws UserNotSavedException {
 		return uservice.signUp(user);
 	}
 	

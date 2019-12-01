@@ -21,20 +21,20 @@ public class RouteserviceImpl implements RouteService {
 	}
 
 	@Override
-	public Route fetchRouteById(int routeId) throws RouteNotFoundException {
+	public Route fetchRouteById(double routeId) throws RouteNotFoundException {
 		try {
 			Route route= repo.findById(routeId).get();
 			if(route==null)
 				throw new RouteNotFoundException("No route with such Route Id exists");
 			return route;
 		} catch (Exception e) {
-			throw new RouteNotFoundException("No Menu Item for Item Id: "+routeId);
+			throw new RouteNotFoundException("No Route for Route Id: "+routeId);
 		}
 	}
 
 	@Override
-	public double fetchDistanceBySourceAndDestination(String source, String destination) {
-			double distance= repo.getDistanceBySourceAndDestination(source, destination);
+	public Object fetchDistanceBySourceAndDestination(String source, String destination) {
+			Object distance= repo.getDistanceBySourceAndDestination(source, destination);
 			return distance;
 	}
 

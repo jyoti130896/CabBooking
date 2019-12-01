@@ -49,10 +49,6 @@ public class Booking {
     @Column(name = "Time")
     private LocalTime time = LocalTime.now();
     
-    
-    @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
-    @Column(name = "Order_Details")
-    private Set<BookingDetail> bookingDetails;
 
 	public int getBookingId() {
 		return bookingId;
@@ -125,16 +121,6 @@ public class Booking {
 
 	public void setTime(LocalTime time) {
 		this.time = time;
-	}
-
-	
-
-	public Set<BookingDetail> getBookingDetails() {
-		return bookingDetails;
-	}
-
-	public void setBookingDetails(Set<BookingDetail> bookingDetails) {
-		this.bookingDetails = bookingDetails;
 	}
 
     

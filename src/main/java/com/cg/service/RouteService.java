@@ -8,9 +8,9 @@ import com.cg.dto.Route;
 public interface RouteService {
 Route addRoute(Route route);
 	
-	Route fetchRouteById(int routeId) throws RouteNotFoundException;
+	Route fetchRouteById(double routeId) throws RouteNotFoundException;
 	
-	double fetchDistanceBySourceAndDestination(String source, String destination);
+	Object fetchDistanceBySourceAndDestination(String source, String destination);
 	
 	List<Route> fetchAllRoute();
 	

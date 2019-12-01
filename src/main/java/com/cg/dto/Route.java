@@ -23,7 +23,7 @@ public class Route {
 	@Id
 	 @Column(name = "route_id", length = 50, nullable = false)
     @GeneratedValue(generator = "routeseq")
-	private String routeId;
+	private int routeId;
 	
     @Column(name = "source", nullable = false)
     private String source;
@@ -49,9 +49,11 @@ public class Route {
 			inverseJoinColumns = @JoinColumn(referencedColumnName = "vehicle_id"))
 	Set<Vehicle> vehicles = new HashSet<Vehicle>();
     
-    
+    public Route() {
+		
+	}
 
-	public Route(String routeId, String source, String destination, double distance, double duration,
+	public Route(int routeId, String source, String destination, double distance, double duration,
 			Set<Vehicle> vehicles) {
 		super();
 		this.routeId = routeId;
@@ -62,11 +64,11 @@ public class Route {
 		this.vehicles = vehicles;
 	}
 
-	public String getRouteId() {
+	public int getRouteId() {
 		return routeId;
 	}
 
-	public void setRouteId(String routeId) {
+	public void setRouteId(int routeId) {
 		this.routeId = routeId;
 	}
 
